@@ -1,8 +1,8 @@
 <div class="container">
-  <div class="row">
-    <app-resultado [contador]="contador"></app-resultado>
+  <div class="row" >
+    <app-resultado [contador]="contador" (contadorForaDeFaixa)="pararAplicacao($event)"></app-resultado>
   </div>
-  <div class="row">
+  <div class="row" *ngIf="exibirPainel; else exibirPainelErro">
       <div class="col-sm-6 d-flex justify-content-end">
           <button (click)="incrementaContador()" class="btn btn-primary">Incrementar</button>
       </div>    
@@ -11,3 +11,8 @@
       </div>
   </div>
 </div>
+
+<ng-template #exibirPainelErro>
+  <h1>{{mensagemErro}}</h1>
+  <button class="btn btn-primary" (click)="reiniciarContador()">Reiniciar Contador</button>
+</ng-template>
