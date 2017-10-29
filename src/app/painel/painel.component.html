@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="row">
+    <app-resultado [contador]="contador"></app-resultado>
+  </div>
+  <div class="row">
+      <div class="col-sm-6 d-flex justify-content-end">
+          <button (click)="incrementaContador()" class="btn btn-primary">Incrementar</button>
+      </div>    
+      <div class="col-sm-6">
+          <button (click)="decrementaContador()" class="btn btn-danger">Decrementar</button>   
+      </div>
+  </div>
+</div>
